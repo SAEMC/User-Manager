@@ -11,6 +11,7 @@ case $cmd in
         read -p "Wanna add ${user_name} to SUDO? [y/n]: " yn
         if [[ "$yn" == "y" ]]; then
             sudo usermod -aG sudo $user_name
+			sudo echo "${user_name} ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers >/dev/null
         fi
         ;;
     "del"|"Del"|"DEL" )
