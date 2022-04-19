@@ -11,12 +11,12 @@ case $cmd in
 		read -p "Wanna add ${user_name} to SUDO? [Y/N]: " yn
 		if [[ "$yn" == "Y" || "$yn" == "y" ]]; then
 			sudo usermod -aG sudo $user_name
-			sudo echo "${user_name} ALL=NOPASSWD: ALL" >>/etc/sudoers
+			echo "${user_name} ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers >/dev/null
 		fi
         ;;
     [Dd][Ee][Ll] )
         sudo deluser $user_name
-		sudo sed -i '' "/${user_name} ALL=NOPASSWD: ALL/d" /etc/sudoers
+		sudo sed -i "/${user_name} ALL=NOPASSWD: ALL/d" /etc/sudoers
 
         read -p "Wanna remove ${user_name} directory? [Y/N]: " yn
         if [[ "$yn" == "Y" || "$yn" == "y" ]]; then
