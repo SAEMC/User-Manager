@@ -18,7 +18,7 @@ case $cmd in
         sudo deluser $user_name
         sudo sed -i "/${user_name} ALL=NOPASSWD: ALL/d" /etc/sudoers
 
-        read -p "Wanna remove ${user_name} directory? [Y/N]: " yn
+        read -p "Wanna delete ${user_name} directory? [Y/N]: " yn
         if [[ "$yn" == "Y" || "$yn" == "y" ]]; then
             sudo rm -r /home/$user_name
         fi
