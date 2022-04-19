@@ -2,7 +2,7 @@
 
 echo "[[ Linux User Manager ]]"
 read -p "What do you want? [Add/Del]: " cmd
-read -p "Enter the username: " user_name
+read -p "Enter username: " user_name
 
 case $cmd in
     [Aa][Dd][Dd] )
