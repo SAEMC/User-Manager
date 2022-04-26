@@ -16,7 +16,7 @@ case $cmd in
         (su - $user_name -c 'cat >>${HOME}/.bashrc <<EOF
 
 # History Timestamp
-export HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTTIMEFORMAT="%y/%m/%d %T "
 EOF')
         ;;
     [Dd][Ee][Ll] )
