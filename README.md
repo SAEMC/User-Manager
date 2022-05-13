@@ -1,4 +1,4 @@
-# SAEMC User Manager - Ver_1_0
+# SAEMC User Manager
 
 ### 준비 사항
 
@@ -10,7 +10,7 @@ $ (sudo) apt-get update && \
 
 - SAEMC User Manager 프로젝트 다운로드
 ```
-$ git clone https://github.com/SAEMC/User-Manager.git
+$ git clone https://github.com/SAEMC/User-Manager
 ```
 
 ---
