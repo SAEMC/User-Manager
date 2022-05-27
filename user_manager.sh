@@ -13,7 +13,7 @@ case $cmd in
             sudo usermod -aG sudo $user_name
             echo "${user_name} ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers >/dev/null
         fi
-        (su - $user_name -c 'cat >>${HOME}/.bashrc <<EOF
+        (su - $user_name -c 'mkdir ${HOME}/.ssh && touch ${HOME}/.ssh/authorized_keys && cat >>${HOME}/.bashrc <<EOF
 
 # History Timestamp
 export HISTTIMEFORMAT="%y/%m/%d %T "
