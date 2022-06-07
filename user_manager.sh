@@ -11,7 +11,7 @@ case $cmd in
         read -p "Wanna add ${user_name} to SUDO? [Y/N]: " yn
         if [[ "$yn" == "Y" || "$yn" == "y" || "$yn" == "" ]]; then
             sudo usermod -aG sudo $user_name
-            echo "${user_name} ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers >/dev/null
+            # echo "${user_name} ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers >/dev/null
         fi
         (su - $user_name -c 'mkdir ${HOME}/.ssh && chmod 700 ${HOME}/.ssh && touch ${HOME}/.ssh/authorized_keys && cat >>${HOME}/.bashrc <<EOF
 
