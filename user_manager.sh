@@ -22,9 +22,9 @@ EOF')
     [Dd][Ee][Ll] )
         sudo deluser $user_name
 
-        if sudo grep -qE "${user_name}" /etc/sudoers; then
-            sudo sed -i "/^${user_name}*/d" /etc/sudoers
-        fi
+        # if sudo grep -qE "${user_name}" /etc/sudoers; then
+        #     sudo sed -i "/^${user_name}*/d" /etc/sudoers
+        # fi
 
         read -p "Wanna delete ${user_name} directory? [Y/N]: " yn
         if [[ "$yn" == "Y" || "$yn" == "y" || "$yn" == "" ]]; then
